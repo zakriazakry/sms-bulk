@@ -1,0 +1,35 @@
+<nb-layout>
+  <nb-sidebar >
+    <!-- <nb-card> -->
+    <nb-menu font-family-secondar [items]="items"> </nb-menu>
+    <!-- </nb-card> -->
+  </nb-sidebar>
+  <!-- layout -->
+  <nb-layout-column style="padding: 0; margin: 0">
+    <nb-card style="padding: 0; margin: 0">
+      <nb-card-body class="nav-bar">
+        <div class="logo flex">
+          <img width="40px" src="/assets/logo.png" alt="" />
+          <h5>Bulk SMS SERVER</h5>
+        </div>
+        <div class="actions">
+          <nb-actions size="small">
+            <nb-action><h6>Credit : 500</h6></nb-action>
+            <nb-action
+              icon="person"
+              [badgeDot]="true"
+              [badgeStatus]="'primary'"
+            ></nb-action>
+            <nb-action
+              icon="bell"
+              badgeDot="true"
+              badgeStatus="success"
+            ></nb-action>
+            <nb-action icon="power-outline"></nb-action>
+          </nb-actions>
+        </div>
+      </nb-card-body>
+    </nb-card>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+</nb-layout>
