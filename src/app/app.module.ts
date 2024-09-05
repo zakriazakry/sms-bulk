@@ -23,16 +23,18 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { PaymentDialogComponent } from './compnent/payment-dialog/payment-dialog.component';
 
 @NgModule({
   declarations: [AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    PaymentDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'default' }), // dark
+    NbThemeModule.forRoot({ name: 'zeko' }), // dark
     NbLayoutModule,
     NbListModule,
     NbMenuModule.forRoot(),

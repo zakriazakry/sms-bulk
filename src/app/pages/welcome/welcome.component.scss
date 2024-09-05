@@ -12,6 +12,7 @@
   gap: 10px;
 }
 
-// .menu-item{
-//   font-size: 100px;
-// }
+nb-menu{
+  --menu-text-font-size : 17px;
+  --menu-item-padding: 10px 20px;
+}

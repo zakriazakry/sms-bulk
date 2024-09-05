@@ -1,67 +1,66 @@
 @forward '@nebular/theme/styles/theming';
 @use '@nebular/theme/styles/theming' as *;
-@use '@nebular/theme/styles/themes/default';
+@use '@nebular/theme/styles/themes/dark';
 
-$nb-themes: nb-register-theme((
+$nb-enable-css-custom-properties: true; // <-- enable css custom properties
 
-      color-primary-100: #F3F7FF,
-      color-primary-200: #DEE9FF,
-      color-primary-300: #6A8CD1,
-      color-primary-400: #6A8CD1,
-      color-primary-500: #3158A7,
-      color-primary-600: #3158A7,
-      color-primary-700: #3158A7,
-      color-primary-800: #3158A7,
-      color-primary-900: #3158A7,
+// ligth mode
+$nb-themes: nb-register-theme(
+  ( // add your variables here like:
 
-
-      color-primary-ligth: #6A8CD1,
-      color-primary-dark: #3158A7,
-
-      color-basic-tiny-ligth: #E6E8EC,
-      color-basic-extra-ligth: #F6F7F9,
-      color-basic-ligth: #838A8E,
-      color-basic-dark: #191233,
-      color-basic-gray: #CDD0D2,
-
-      text-caption-font-size: 20px,
-      color-success-tiny-ligth: #A5D8B0,
-      color-success-extra-ligth: #E7FFEC,
-      color-success-ligth: #A5D8B0,
-      color-success-dark: #69AE78,
-
-      color-warning-tiny-ligth: #FFF4E4,
-      color-warning-ligth: #EFA22F,
-      color-warning-dark: #C18120,
-
-
-      color-danger-tiny-ligth: #FFEDED,
-      color-danger-ligth: #FA5959,
-      color-danger-dark: #DD4242,
+  color-primary-100: #F3F7FF,
+  color-primary-200: #DEE9FF,
+  color-primary-300: #d16a6a,
+  color-primary-400: #d16a6a,
+  color-primary-500: #a73131,
+  color-primary-600: #a73131,
+  color-primary-700: #a73131,
+  color-primary-800: #a73131,
+  color-primary-900: #a73131,
+  color-primary-ligth: #6A8CD1,
+  color-primary-dark: #3158A7,
+  color-basic-tiny-ligth: #E6E8EC,
+  color-basic-extra-ligth: #F6F7F9,
+  color-basic-ligth: #838A8E,
+  color-basic-dark: #191233,
+  color-basic-gray: #CDD0D2,
+  color-success-tiny-ligth: #A5D8B0,
+  color-success-extra-ligth: #E7FFEC,
+  color-success-ligth: #A5D8B0,
+  color-success-dark: #69AE78,
+  color-warning-tiny-ligth: #FFF4E4,
+  color-warning-ligth: #EFA22F,
+  color-warning-dark: #C18120,
+  color-danger-tiny-ligth: #FFEDED,
+  color-danger-ligth: #FA5959,
+  color-danger-dark: #DD4242,
 
 
 
-      //none esems added
+  //none esems added
 
 
-      color-success-lightNew: #36D751,
-      color-success-darkNew: #1D8F30,
-      color-success-b : #DDF8E1,
+  color-success-lightNew: #36D751,
+  color-success-darkNew: #1D8F30,
+  color-success-b : #DDF8E1,
 
-      color-danger-new:#EE4848,
-      col-close-danger:#F2794C,
-      col-grey-gray: #CCCDDB,
-      col-gray-b: #8585A3,
-      col-gray-s: #E7E7F2,
-      colr-grey-m:#F1F2FC,
-      col-grey-l: #FAFAFF,
-      col-orange-n: #FFA73F,
-      col-orange-d: #CA7B1F,
-      col-blye-pr:#5991FF,
-      col-blue-diff:#36A7D7,
-      col-pnk-lw:#E3ECFF,
-      col-extremly-primaty: #42438B,
-      col-bg-dan:#ca3801,
-      col-dng-weak:#FFE9E1,
-      col-dg-bit-strong:#C32929,
-      color-black-new: #0F1026), default, default);
+  color-danger-new:#EE4848,
+  col-close-danger:#F2794C,
+  col-grey-gray: #CCCDDB,
+  col-gray-b: #8585A3,
+  col-gray-s: #E7E7F2,
+  colr-grey-m:#F1F2FC,
+  col-grey-l: #FAFAFF,
+  col-orange-n: #FFA73F,
+  col-orange-d: #CA7B1F,
+  col-blye-pr:#5991FF,
+  col-blue-diff:#36A7D7,
+  col-pnk-lw:#E3ECFF,
+  col-extremly-primaty: #42438B,
+  col-bg-dan:#ca3801,
+  col-dng-weak:#FFE9E1,
+  col-dg-bit-strong:#C32929,
+  color-black-new: #0F1026),
+  zeko,
+  default
+);

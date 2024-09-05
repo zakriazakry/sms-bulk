@@ -1,0 +1,13 @@
+nb-card{
+  width: 500px;
+  nb-card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span{
+      font-weight: normal;
+    }
+  }
+
+}
