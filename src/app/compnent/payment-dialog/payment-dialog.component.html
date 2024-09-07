@@ -1,7 +1,7 @@
 <nb-card size="large">
   <nb-card-header>
     <h3>دفع الفاتورة</h3>
-    <nb-icon [icon]="'close-outline'"></nb-icon>
+    <nb-icon (click)="dialogRef.close()" style="cursor: pointer;" [icon]="'close-outline'"></nb-icon>
   </nb-card-header>
   <nb-card-body>
     <h2>التكلفة : <span>19.99$</span></h2>
@@ -31,6 +31,6 @@
 
   </nb-card-body>
   <nb-card-footer>
-    <button nbButton>Pay now</button>
+    <button (click)="dialogRef.close()" nbButton>Pay now</button>
   </nb-card-footer>
 </nb-card>

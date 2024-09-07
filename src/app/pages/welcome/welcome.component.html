@@ -16,6 +16,7 @@
           <nb-actions size="small">
             <nb-action><h6>Credit : 500</h6></nb-action>
             <nb-action
+              [nbContextMenu]="menuItems"
               icon="person"
               [badgeDot]="true"
               [badgeStatus]="'primary'"
@@ -30,6 +31,6 @@
         </div>
       </nb-card-body>
     </nb-card>
-    <router-outlet style="margin: 20px;"></router-outlet>
+    <router-outlet></router-outlet>
   </nb-layout-column>
 </nb-layout>

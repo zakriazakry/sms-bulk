@@ -1,23 +1,24 @@
-nb-card{
+nb-card {
   direction: rtl;
   width: 500px;
-box-sizing: border-box !important;
-  nb-card-header{
+  box-sizing: border-box !important;
+  nb-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    span{
+    span {
       font-weight: normal;
     }
   }
-  nb-card-body{
-box-sizing: border-box !important;
-label{
-    float: right;
+  nb-card-body {
+    box-sizing: border-box !important;
+    label {
+      float: right;
+      margin-bottom: 10px;
     }
-    .rem{
-      padding:10px;
+    .rem {
+      padding: 10px;
       width: 100%;
       display: flex;
       justify-content: space-between;

@@ -1,39 +1,74 @@
-import { Component } from '@angular/core';
-import { NbMenuItem } from '@nebular/theme';
-
+import { NB_WINDOW, NbMenuItem, NbMenuService } from '@nebular/theme';
+import { Component, inject, Inject, OnInit } from '@angular/core';
+import { filter, map } from 'rxjs/operators';
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.scss',
 })
 export class WelcomeComponent {
+  menuItems= [
+    {
+      title:"Profile"
+    },
+    {
+      title:"setting"
+    },
+    {
+      title:"Logut"
+    },
+  ];
   items: NbMenuItem[] = [
     {
       title: 'Dashboard',
-      icon: 'home',
-      skipLocationChange: true,
+      icon: 'home-outline',
       pathMatch: 'full',
-      link: '',
+      link: '/dashboard',
     },
     {
       title: 'Messages',
-      icon: 'message-circle',
+      icon: 'message-circle-outline',
+      pathMatch: 'full',
+      link: '/msg',
     },
     {
       title: 'Server Status',
-      icon: 'hard-drive',
+      icon: 'hard-drive-outline',
+      link: '/server-status',
     },
     {
       title: 'Subscription Plans',
-      icon: 'gift',
+      icon: 'gift-outline',
+      link: '/subscription-plans',
     },
     {
       title: 'Privacy Policy',
       icon: { icon: 'checkmark-outline', pack: 'eva' },
+      link: '/privacy-policy',
     },
     {
-      title: 'API Refrences',
-      icon: 'file-text',
+      title: 'API References',
+      icon: 'file-text-outline',
+      link: '/api-references', 
     },
   ];
+  window = inject(NB_WINDOW);
+  constructor(private nbMenuService: NbMenuService) {
+  }
+
+  ngOnInit() {
+    // this.nbMenuService.onItemClick()
+    //   .pipe(
+    //     filter(({ tag }) => {
+    //       console.log(tag);
+    //       return tag === 'my-context-menu';
+    //     }),
+    //     map(({ item: { title } }) => title),
+    //   )
+    //   .subscribe(title => this.window.alert(`${title} was clicked!`));
+    // this.nbMenuService.onItemClick().subscribe((res)=>
+    // {
+    //   this.window.alert(`${res.item.title} was clicked!`);
+    // });
+  }
 }

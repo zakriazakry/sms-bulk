@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { NbDialogRef, NbDialogService } from '@nebular/theme';
 
 @Component({
   selector: 'app-payment-dialog',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './payment-dialog.component.scss'
 })
 export class PaymentDialogComponent {
-
+dialogService = inject(NbDialogService);
+dialogRef = inject(NbDialogRef);
 }
