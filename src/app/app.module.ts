@@ -34,12 +34,14 @@ import * as echarts from 'echarts';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { AgGridAngular } from 'ag-grid-angular';
 import { NewMsgDialogComponent } from './pages/messages/new-msg-dialog/new-msg-dialog.component';
+import { CellMenuComponent } from './pages/messages/cell-menu/cell-menu.component';
 @NgModule({
   declarations: [AppComponent,
     WelcomeComponent,
     PaymentDialogComponent,
     MessagesComponent,
-    NewMsgDialogComponent
+    NewMsgDialogComponent,
+    CellMenuComponent
   ],
   imports: [
     BrowserModule,

@@ -1,23 +1,24 @@
 <nb-card style="padding: 20px;">
   <nb-card-header><h1>New message</h1></nb-card-header>
   <nb-card-body>
-    <nb-form-field>
+    <div class="selector">
       <label  for="messageContent">Message Content</label>
       <input name="messageContent" id="messageContent"  nbInput>
-    </nb-form-field>
-    <br>
-    <label>Select Type</label>
-    <nb-select fullWidth placeholder="Select Showcase" [(selected)]="selectedItem">
-          <nb-option value="0">Email</nb-option>
-          <nb-option value="1">sms</nb-option>
-    </nb-select>
-    <br>
-    <label>Select Gruop</label>
-    <nb-select fullWidth placeholder="Select Showcase" status="info" [(selected)]="seletedGruop">
-          <nb-option value="Libyana">Libyana</nb-option>
-          <nb-option value="Al-madar">Al-Madar</nb-option>
-    </nb-select>
-    <br>
+    </div>
+    <div class="selector">
+      <label >Select Type</label>
+      <nb-select fullWidth placeholder="Select Showcase" [(selected)]="selectedItem">
+            <nb-option value="0">Email</nb-option>
+            <nb-option value="1">sms</nb-option>
+      </nb-select>
+    </div>
+    <div class="selector">
+      <label>Select Gruop</label>
+      <nb-select fullWidth placeholder="Select Showcase" status="info" [(selected)]="seletedGruop">
+            <nb-option value="Libyana">Libyana</nb-option>
+            <nb-option value="Al-madar">Al-Madar</nb-option>
+      </nb-select>
+    </div>
   </nb-card-body>
   <nb-card-footer>
     <button nbButton status="info">Submit</button>

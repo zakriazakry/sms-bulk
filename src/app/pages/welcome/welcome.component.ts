@@ -1,6 +1,7 @@
 import { NB_WINDOW, NbMenuItem, NbMenuService } from '@nebular/theme';
-import { Component, inject, Inject, OnInit } from '@angular/core';
+import { Component, inject, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { filter, map } from 'rxjs/operators';
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
@@ -49,11 +50,13 @@ export class WelcomeComponent {
     {
       title: 'API References',
       icon: 'file-text-outline',
-      link: '/api-references', 
+      link: '/api-references',
     },
   ];
   window = inject(NB_WINDOW);
-  constructor(private nbMenuService: NbMenuService) {
+  isBrowser: boolean = false;
+  constructor(private nbMenuService: NbMenuService,@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   ngOnInit() {
