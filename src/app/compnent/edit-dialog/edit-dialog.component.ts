@@ -15,7 +15,7 @@ export class EditDialogComponent {
 
   dialog = inject(NbDialogRef);
   statemng = inject(StatemangmentService);
-
+ 
   close() {
     if (this.form.valid) {
       this.statemng.setData(this.form.get('email')?.value ?? '')
