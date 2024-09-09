@@ -4,6 +4,8 @@
   <br>
   <button (click)="newMessage()" nbButton status="info">New Message</button>
   <br>
+  <!-- value of signal -->
+   <h1>Signal Input is {{myInput()}}</h1>
   <ag-grid-angular
   class="ag-theme-quartz"
     [rowData]="rowData"

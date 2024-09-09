@@ -1,0 +1,20 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  &:hover .edit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.edit {
+    color: purple;
+    cursor: pointer;
+    display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}

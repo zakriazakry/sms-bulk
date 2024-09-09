@@ -35,13 +35,19 @@ import { MessagesComponent } from './pages/messages/messages.component';
 import { AgGridAngular } from 'ag-grid-angular';
 import { NewMsgDialogComponent } from './pages/messages/new-msg-dialog/new-msg-dialog.component';
 import { CellMenuComponent } from './pages/messages/cell-menu/cell-menu.component';
+import { EdiableEmailCellComponent } from './pages/messages/ediable-email-cell/ediable-email-cell.component';
+import { EditDialogComponent } from './compnent/edit-dialog/edit-dialog.component';
+import { NgForm, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [AppComponent,
     WelcomeComponent,
     PaymentDialogComponent,
     MessagesComponent,
     NewMsgDialogComponent,
-    CellMenuComponent
+    CellMenuComponent,
+    EdiableEmailCellComponent,
+    EditDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +64,8 @@ import { CellMenuComponent } from './pages/messages/cell-menu/cell-menu.componen
     AgGridAngular,
     NbSidebarModule.forRoot(),
     NbInputModule,
+    ReactiveFormsModule,
+    CommonModule,
     NbEvaIconsModule,
     NbFormFieldModule,
     NbActionsModule,

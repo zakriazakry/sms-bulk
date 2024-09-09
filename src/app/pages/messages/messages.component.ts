@@ -1,26 +1,32 @@
-import { Component, inject, Inject, OnChanges, PLATFORM_ID } from '@angular/core';
-import { ColDef } from 'ag-grid-community';
+import {
+  Component,
+  inject,
+  Inject,
+  OnChanges,
+  PLATFORM_ID,
+  OnInit,
+  effect,
+  signal,
+} from '@angular/core';
+import { ColDef, ICellRendererParams } from 'ag-grid-community';
 import { isPlatformBrowser } from '@angular/common';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-quartz.css';
-import {  NbDialogService } from '@nebular/theme';
+import { NbDialogService } from '@nebular/theme';
 import { NewMsgDialogComponent } from './new-msg-dialog/new-msg-dialog.component';
 import { CellMenuComponent } from './cell-menu/cell-menu.component';
+import { StatemangmentService } from '../../services/statemangment.service';
+import { EdiableEmailCellComponent } from './ediable-email-cell/ediable-email-cell.component';
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html',
   styleUrls: ['./messages.component.scss'],
 })
-export class MessagesComponent implements OnChanges{
-
-  ngOnChanges(){
-
-    console.log("ngOnChanges");
-  }
-
-
-dialog= inject(NbDialogService);
-
+export class MessagesComponent {
+  isBrowser: boolean;
+  statemg = inject(StatemangmentService);
+  dialog = inject(NbDialogService);
+  myInput = signal('');
   defuColDef: ColDef = {
     flex: 1,
     minWidth: 100,
@@ -28,13 +34,29 @@ dialog= inject(NbDialogService);
 
   colDefs: ColDef[] = [
     { headerName: 'ID', field: 'ID', maxWidth: 100 },
-    { field: 'email', headerName: 'Email' },
+    {
+      field: 'email',
+      headerName: 'Email',
+      cellRendererSelector: (ce: ICellRendererParams) => {
+        return { component: EdiableEmailCellComponent };
+      },
+    },
     { field: 'phone', headerName: 'Phone Number' },
     { field: 'message', headerName: 'Message' },
     { field: 'sendedAt', headerName: 'sended at' },
-    { field: 'options',cellStyle: { 'text-align': 'center' },
-      headerName: 'options',cellRenderer:CellMenuComponent},
+    {
+      field: 'options',
+      cellStyle: { 'text-align': 'center' },
+      headerName: 'options',
+      cellRenderer: CellMenuComponent,
+    },
   ];
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.myInput = this.statemg.getData();
+    console.log('constructor');
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
 
   rowData = [
     {
@@ -45,36 +67,17 @@ dialog= inject(NbDialogService);
       sendedAt: '2024-1-1 10:23:44',
       options: 'sss',
     },
-    // {
-    //   ID: '2',
-    //   phone: '0942667817',
-    //   email: 'john@example.com',
-    //   message: 'How are you?',
-    //   sendedAt: '2024-4-2 03:23:44',
-    // },
-    // {
-    //   ID: '3',
-    //   phone: '0942667815',
-    //   email: 'jane@example.com',
-    //   message: 'Good day!',
-    //   sendedAt: '2024-5-4 04:23:44',
-    // },
-    // {
-    //   ID: '4',
-    //   phone: '0942667814',
-    //   email: 'mike@example.com',
-    //   message: 'Need help!',
-    //   sendedAt: '2024-7-5 12:23:44',
-    // },
+    {
+      ID: '2',
+      phone: '0942667817',
+      email: 'john@example.com',
+      message: 'How are you?',
+      sendedAt: '2024-4-2 03:23:44',
+      options: 'sss',
+    },
   ];
 
-  isBrowser: boolean;
-
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    this.isBrowser = isPlatformBrowser(this.platformId);
-    console.log(platformId);
-  }
-  newMessage(){
-    this.dialog.open(NewMsgDialogComponent)
+  newMessage() {
+    this.dialog.open(NewMsgDialogComponent);
   }
 }
